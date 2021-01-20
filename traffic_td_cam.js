@@ -1,6 +1,6 @@
-var { spawn } = require('child_process');
+import { spawn } from 'child_process';
 
-function getTrafficFromTDCam() {
+export function getTrafficFromTDCam() {
     return new Promise((resolve, reject) => {
         try {
             const pythonProcess = spawn('python', ['traffic.py'])
@@ -13,7 +13,3 @@ function getTrafficFromTDCam() {
         }
     });
 }
-
-module.exports = {
-    getTrafficFromTDCam
-};
